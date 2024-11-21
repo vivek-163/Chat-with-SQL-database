@@ -6,6 +6,7 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain_community.agent_toolkits.sql.toolkit import SQLDatabaseToolkit  # Updated import for langchain
 from sqlalchemy import create_engine
 from langchain_groq import ChatGroq
+import os
 
 st.set_page_config(page_title="SQLMate", page_icon="🦜")
 st.title("🦜 SQLMate : Chat with MySQL DB")
@@ -31,6 +32,14 @@ if radio_opt.index(selected_opt) == 0:
 
 # GRoq API Key
 api_key = st.sidebar.text_input(label="Groq API Key", type="password")
+
+
+# Set the API key programmatically
+if api_key:  # Ensure the key is provided via the Streamlit sidebar
+    os.environ["GROQ_API_KEY"] = api_key
+else:
+    st.error("API key is missing! Please provide a valid Groq API key.")
+    st.stop()
 
 # Check if necessary information is provided
 if not db_uri:
