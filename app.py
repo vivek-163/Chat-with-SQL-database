@@ -34,12 +34,12 @@ if radio_opt.index(selected_opt) == 0:
 api_key = st.sidebar.text_input(label="Groq API Key", type="password")
 
 
-# Set the API key programmatically
-if api_key:  # Ensure the key is provided via the Streamlit sidebar
-    os.environ["GROQ_API_KEY"] = api_key
-else:
-    st.error("API key is missing! Please provide a valid Groq API key.")
-    st.stop()
+# # Set the API key programmatically
+# if api_key:  # Ensure the key is provided via the Streamlit sidebar
+#     os.environ["GROQ_API_KEY"] = api_key
+# else:
+#     st.error("API key is missing! Please provide a valid Groq API key.")
+#     st.stop()
 
 # Check if necessary information is provided
 if not db_uri:
