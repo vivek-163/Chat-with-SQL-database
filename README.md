@@ -38,8 +38,8 @@
 ### Steps  
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/your-username/sqlmate.git  
-   cd sqlmate  
+   git clone https://github.com/vivek-163/Chat-with-SQL-database.git  
+   cd Chat-with-SQL-database  
 
 2. Install dependencies from `requirements.txt`:  
    Ensure you have `pip` installed, then run:  
